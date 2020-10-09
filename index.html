@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="public" />
+<meta name="description" content="Clue Online"/>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NK37YT4ZV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6NK37YT4ZV');
+</script>
+<html> 
+<head> 
+    <link rel="icon" type="image/png" href="favicon.png?ver=1"/>
+    <link rel="icon" type="image/png" href="favicon.png?ver=1"/>
+    <link rel="icon" href="favicon.ico?ver=1" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico?ver=1" type="image/x-icon"/>
+    <title> 
+      Clue
+    </title> 
+    <style> 
+        h1 { 
+            color: black; 
+            text-align: center;
+            width: 100vw;
+            font-size: min(max(30px, 100vw),40px);
+        } 
+        body { 
+            text-align: left; 
+        } 
+        select{
+            width: calc((90vw/3));
+            height: 5vh;
+            font-size: calc(5vh/2);
+            align-content: center;
+            align-self: center;
+        }
+        #askbtn {
+            width: 90.5vw;
+            height: 10vh;
+            font-size: 5vh;
+            align-self: center;
+            align-content: center;
+        }
+        #Statistics {
+            align-content: center;
+            align-self: center;
+            font-size: min(max(16px, 5vw),22px);
+        }
+        #audioPlayer {
+            font-size: min(max(50px, 5vw),40px);
+        }
+        .objeto {
+        	object-fit: contain;
+        	background: none;
+        	border:0;
+        	height: min(11vh, 14vw);
+        	width: min(11vh, 14vw);
+        }
+        .selector {
+        	background: none;
+        	border: none;
+        	outline:none;
+        	width:min(12vh, 15vw);
+            height: min(12vh, 15vw);
+        }
+        .center {text-align: center;}
+
+        #playerSelections {
+            margin: 0 auto;
+            background: url("./Images/Background.png?ver=1");
+            background-size: calc(80*min(11vh, 14vw)) calc(40*min(11vh, 14vw));
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 25px;
+        }
+
+    </style> 
+</head> 
+<body> 
+    <h1>Clue</h1> 
+
+    <p class="center">
+        <select name = weapon id = "weapon">
+            <option value=0/0>Arma</option>
+            <option value="pistola">Pistola</option>
+            <option value="daga">Daga</option>
+            <option value="llave_inglesa">Llave Inglesa</option>
+            <option value="candelabro">Candelabro</option>
+            <option value="tuberia">Tubería</option>
+            <option value="cuerda">Cuerda</option>
+        </select>
+        <select name = place id = "place">
+            <option value=0/0>Lugar</option>
+            <option value="cocina">Cocina</option>
+            <option value="comedor">Comedor</option>
+            <option value="estudio">Estudio</option>
+            <option value="patio">Patio</option>
+            <option value="salon_de_juegos">Salón de juegos</option>
+            <option value="sala">Sala</option>
+            <option value="habitacion">Habitación</option>
+            <option value="garaje">Garaje</option>
+            <option value="baño">Baño</option>
+        </select>
+        <select name = person id = "person">
+            <option value=0/0>Persona</option>
+            <option value="verdi">Verdi</option>
+            <option value="escarlata">Escarlata</option>
+            <option value="moradillo">Moradillo</option>
+            <option value="blanco">Blanco</option>
+            <option value="mostaza">Mostaza</option>
+            <option value="azulino">Azulino</option>
+        </select>
+    </p>
+    <p class="center">
+        <button onclick="runRound()" id = "askbtn">Preguntar</button> 
+        <p onload="startAudio()" onclick="startAudio()" id = "audioPlayer"  class="center">Haz Click En Mi Para Iniciar</p>
+    </p> 
+
+    <p onclick="clearBtn()" id="Statistics"  class="center"></p>
+
+    <div id="playerSelections">
+
+    <p class="center">
+    		<button onclick="depressButton('Pistola')" class="selector"><img id="Pistola" src="./Images/Pistola.png?ver=1" alt="./Images/Pistola_depressed.png?ver=1" class="objeto"></button>
+    		<button onclick="depressButton('Candelabro')" class="selector"><img id="Candelabro" src="./Images/Candelabro.png?ver=1" alt="./Images/Candelabro_depressed.png?ver=1" class="objeto"></button>
+    		<button onclick="depressButton('Cuerda')" class="selector"><img id="Cuerda" src="./Images/Cuerda.png?ver=1" alt="./Images/Cuerda_depressed.png?ver=1" class="objeto"></button>
+    		<button onclick="depressButton('Daga')" class="selector"><img id="Daga" src="./Images/Daga.png?ver=1" alt="./Images/Daga_depressed.png?ver=1" class="objeto"></button>
+    		<button onclick="depressButton('LlaveInglesa')" class="selector"><img id="LlaveInglesa" src="./Images/LlaveInglesa.png?ver=1" alt="./Images/LlaveInglesa_depressed.png?ver=1" class="objeto"></button>
+    		<button onclick="depressButton('Tuberia')" class="selector"><img id="Tuberia" src="./Images/Tuberia.png?ver=1" alt="./Images/Tuberia_depressed.png?ver=1" class="objeto"></button>
+	</p>
+	<p class="center">
+			<button onclick="depressButton('Verdi')" class="selector"><img id="Verdi" src="./Images/Verdi.png?ver=1" alt="./Images/Character_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Escarlata')" class="selector"><img id="Escarlata" src="./Images/Escarlata.png?ver=1" alt="./Images/Character_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Moradillo')" class="selector"><img id="Moradillo" src="./Images/Moradillo.png?ver=1" alt="./Images/Character_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Blanco')" class="selector"><img id="Blanco" src="./Images/Blanco.png?ver=1" alt="./Images/Character_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Mostaza')" class="selector"><img id="Mostaza" src="./Images/Mostaza.png?ver=1" alt="./Images/Character_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Azulino')" class="selector"><img id="Azulino" src="./Images/Azulino.png?ver=1" alt="./Images/Character_depressed.png?ver=1" class="objeto"></button>
+	</p>
+    <p class="center">
+            <button onclick="depressButton('Cocina')" class="selector"><img id="Cocina" src="./Images/Cocina.png?ver=1" alt="./Images/Cocina_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Comedor')" class="selector"><img id="Comedor" src="./Images/Comedor.png?ver=1" alt="./Images/Comedor_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Estudio')" class="selector"><img id="Estudio" src="./Images/Estudio.png?ver=1" alt="./Images/Estudio_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Sala')" class="selector"><img id="Sala" src="./Images/Sala.png?ver=1" alt="./Images/Sala_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Patio')" class="selector"><img id="Patio" src="./Images/Patio.png?ver=1" alt="./Images/Patio_depressed.png?ver=1" class="objeto"></button>
+    </p>
+    <p class="center">
+            <button onclick="depressButton('Habitacion')" class="selector"><img id="Habitacion" src="./Images/Habitacion.png?ver=1" alt="./Images/Habitacion_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Garaje')" class="selector"><img id="Garaje" src="./Images/Garaje.png?ver=1" alt="./Images/Garaje_depressed.png?ver=1" class="objeto"></button>
+            <button onclick="depressButton('Bano')" class="selector"><img id="Bano" src="./Images/Bano.png?ver=1" alt="./Images/Bano_depressed.png?ver=1" class="objeto"></button>
+    </p>
+
+    </div>
+    <!--User defined JS files-->
+    <script src="Clueapp.js"></script> 
+  
+</body> 
+<audio src="Mystery.mp3" autoplay id = "starting"></audio>
+<audio src="ambient.mp3" autoplay id = "ambient"></audio>
+</html> 
