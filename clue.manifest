@@ -1,0 +1,20 @@
+{
+  "name": "Clue",
+  "short_name": "Clue",
+  "description": "Play Clue.",
+  "display": "standalone",
+  "scope": "/app/",
+  "icons": [{
+    "src": "favicon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }, {
+    "src": "favicon.ico",
+    "sizes": "512x512",
+    "type": "image/x-icon"
+  }, {
+    "src": "favicon-iphone.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
