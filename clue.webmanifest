@@ -1,9 +1,0 @@
-{
-  "name": "Clue",
-  "short_name": "Clue",
-  "theme_color": "#008eff",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "scope": "https://dogatemycode.github.io/Clue/",
-  "start_url": "https://dogatemycode.github.io/Clue/"
-}
