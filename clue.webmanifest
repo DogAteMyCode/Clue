@@ -1,20 +1,9 @@
 {
   "name": "Clue",
   "short_name": "Clue",
-  "description": "Play Clue.",
+  "theme_color": "#008eff",
+  "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/app/",
-  "icons": [{
-    "src": "favicon.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }, {
-    "src": "favicon.ico",
-    "sizes": "512x512",
-    "type": "image/x-icon"
-  }, {
-    "src": "favicon-iphone.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }]
+  "scope": "https://dogatemycode.github.io/Clue/",
+  "start_url": "https://dogatemycode.github.io/Clue/"
 }
